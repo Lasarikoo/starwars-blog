@@ -1,13 +1,14 @@
+// src/main.jsx
+import 'bootstrap/dist/css/bootstrap.min.css'   // <— aquí
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'  // Global styles for your application
-import { Home } from './pages/Home';
+import App from './App'
+import { StoreProvider } from './context/StoreContext'
 
-const Main = () => {
-    return (
-        <Home />
-    );
-}
-
-// Render the Main component into the root DOM element.
-ReactDOM.createRoot(document.getElementById('root')).render(<Main />)
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <StoreProvider>
+      <App />
+    </StoreProvider>
+  </React.StrictMode>
+)
